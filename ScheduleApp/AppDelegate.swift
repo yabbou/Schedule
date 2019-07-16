@@ -1,11 +1,3 @@
-//
-//  AppDelegate.swift
-//  ScheduleApp
-//
-//  Created by Yaakov on 12 Tamuz 5779.
-//  Copyright © 5779 Yaakov. All rights reserved.
-//
-
 import UIKit
 import CoreData
 
@@ -14,9 +6,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+
+        //NSObject: AnyObject
+//        window=UIWindow(frame: UIScreen.mainScreen().bounds)
+//        window?.makeKeyAndVisible()
+//        window?.rootViewController =
+//            UINavigationController(rootViewController: ScheduleTableViewController())
+        
         return true
     }
 

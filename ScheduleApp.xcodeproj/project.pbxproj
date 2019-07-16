@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D7366BD822DE553600F268C9 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7366BD722DE553600F268C9 /* Activity.swift */; };
 		D795C5A522DD27C700B65BED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D795C5A422DD27C700B65BED /* AppDelegate.swift */; };
 		D795C5AA22DD27C700B65BED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D795C5A822DD27C700B65BED /* Main.storyboard */; };
 		D795C5AD22DD27C800B65BED /* ScheduleApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D795C5AB22DD27C700B65BED /* ScheduleApp.xcdatamodeld */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D7366BD722DE553600F268C9 /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
 		D795C5A122DD27C700B65BED /* ScheduleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScheduleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D795C5A422DD27C700B65BED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D795C5A922DD27C700B65BED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -100,8 +102,9 @@
 			isa = PBXGroup;
 			children = (
 				D795C5A422DD27C700B65BED /* AppDelegate.swift */,
-				D795C5A822DD27C700B65BED /* Main.storyboard */,
 				D795C5D522DD2C7700B65BED /* ScheduleTableViewController.swift */,
+				D7366BD722DE553600F268C9 /* Activity.swift */,
+				D795C5A822DD27C700B65BED /* Main.storyboard */,
 				D795C5AE22DD27CB00B65BED /* Assets.xcassets */,
 				D795C5B022DD27CB00B65BED /* LaunchScreen.storyboard */,
 				D795C5B322DD27CB00B65BED /* Info.plist */,
@@ -261,6 +264,7 @@
 			files = (
 				D795C5D622DD2C7700B65BED /* ScheduleTableViewController.swift in Sources */,
 				D795C5AD22DD27C800B65BED /* ScheduleApp.xcdatamodeld in Sources */,
+				D7366BD822DE553600F268C9 /* Activity.swift in Sources */,
 				D795C5A522DD27C700B65BED /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -349,6 +353,8 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = YES;
+				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -410,6 +416,8 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = YES;
+				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -436,7 +444,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y4BHVTZJG6;
 				INFOPLIST_FILE = ScheduleApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -444,6 +454,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = yabbou.ScheduleApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -453,7 +464,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y4BHVTZJG6;
 				INFOPLIST_FILE = ScheduleApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -461,6 +474,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = yabbou.ScheduleApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
