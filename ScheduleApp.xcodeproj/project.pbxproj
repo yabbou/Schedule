@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D7366BD822DE553600F268C9 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7366BD722DE553600F268C9 /* Activity.swift */; };
+		D7366BDB22DE708B00F268C9 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7366BDA22DE708B00F268C9 /* Settings.swift */; };
 		D795C5A522DD27C700B65BED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D795C5A422DD27C700B65BED /* AppDelegate.swift */; };
 		D795C5AA22DD27C700B65BED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D795C5A822DD27C700B65BED /* Main.storyboard */; };
 		D795C5AD22DD27C800B65BED /* ScheduleApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D795C5AB22DD27C700B65BED /* ScheduleApp.xcdatamodeld */; };
@@ -15,7 +16,7 @@
 		D795C5B222DD27CB00B65BED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D795C5B022DD27CB00B65BED /* LaunchScreen.storyboard */; };
 		D795C5BD22DD27CB00B65BED /* ScheduleAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D795C5BC22DD27CB00B65BED /* ScheduleAppTests.swift */; };
 		D795C5C822DD27CB00B65BED /* ScheduleAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D795C5C722DD27CB00B65BED /* ScheduleAppUITests.swift */; };
-		D795C5D622DD2C7700B65BED /* ScheduleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D795C5D522DD2C7700B65BED /* ScheduleTableViewController.swift */; };
+		D795C5D622DD2C7700B65BED /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D795C5D522DD2C7700B65BED /* MainController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +38,7 @@
 
 /* Begin PBXFileReference section */
 		D7366BD722DE553600F268C9 /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
+		D7366BDA22DE708B00F268C9 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		D795C5A122DD27C700B65BED /* ScheduleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScheduleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D795C5A422DD27C700B65BED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D795C5A922DD27C700B65BED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -50,7 +52,7 @@
 		D795C5C322DD27CB00B65BED /* ScheduleAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScheduleAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D795C5C722DD27CB00B65BED /* ScheduleAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleAppUITests.swift; sourceTree = "<group>"; };
 		D795C5C922DD27CB00B65BED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D795C5D522DD2C7700B65BED /* ScheduleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewController.swift; sourceTree = "<group>"; };
+		D795C5D522DD2C7700B65BED /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,8 +104,9 @@
 			isa = PBXGroup;
 			children = (
 				D795C5A422DD27C700B65BED /* AppDelegate.swift */,
-				D795C5D522DD2C7700B65BED /* ScheduleTableViewController.swift */,
+				D795C5D522DD2C7700B65BED /* MainController.swift */,
 				D7366BD722DE553600F268C9 /* Activity.swift */,
+				D7366BDA22DE708B00F268C9 /* Settings.swift */,
 				D795C5A822DD27C700B65BED /* Main.storyboard */,
 				D795C5AE22DD27CB00B65BED /* Assets.xcassets */,
 				D795C5B022DD27CB00B65BED /* LaunchScreen.storyboard */,
@@ -262,10 +265,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D795C5D622DD2C7700B65BED /* ScheduleTableViewController.swift in Sources */,
+				D795C5D622DD2C7700B65BED /* MainController.swift in Sources */,
 				D795C5AD22DD27C800B65BED /* ScheduleApp.xcdatamodeld in Sources */,
 				D7366BD822DE553600F268C9 /* Activity.swift in Sources */,
 				D795C5A522DD27C700B65BED /* AppDelegate.swift in Sources */,
+				D7366BDB22DE708B00F268C9 /* Settings.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

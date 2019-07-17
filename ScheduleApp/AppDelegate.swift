@@ -6,14 +6,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-
-        //NSObject: AnyObject
-//        window=UIWindow(frame: UIScreen.mainScreen().bounds)
-//        window?.makeKeyAndVisible()
-//        window?.rootViewController =
-//            UINavigationController(rootViewController: ScheduleTableViewController())
+    private func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions:
+        [NSObject: AnyObject]?) -> Bool { //UIApplication.LaunchOptionsKey: Any
         
+        //let layout = UITableViewFlowLayout()
+        window=UIWindow(frame: UIScreen.main.bounds)
+        window?.makeKeyAndVisible()
+        window?.rootViewController =
+            UINavigationController(rootViewController: MainController()) //..er(tableViewLayout:layout)
         return true
     }
 
