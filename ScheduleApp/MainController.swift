@@ -16,10 +16,10 @@ class MainController: UICollectionViewController, UICollectionViewDelegateFlowLa
     }
     
     func initSchedule() -> [Activity]{
-        let excersize=Activity(name: "Excersize",time: "20")
-        let torah=Activity(name: "Torah",time: "2h")
+        let excersize=Activity(name: "excersize",time: "20")
+        let code=Activity(name: "code",time: "2h")
         let guitar=Activity(name: "guitar",time: "15")
-        return [excersize,torah,guitar]
+        return [excersize,code,guitar]
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -29,15 +29,11 @@ class MainController: UICollectionViewController, UICollectionViewDelegateFlowLa
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath as IndexPath) as! ActivityCell
-        cell.nameLabel.text = "Test: \(indexPath.item)"
-        
-        //        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath as IndexPath)
-        //
+        cell.nameLabel.text = activities[indexPath.item].name
+        cell.backgroundColor = UIColor.blue
+
         //        let activity = activities[indexPath.row]
         //        cell.textLabel?.text =  activity.time + " " + activity.name
-        //
-        //        cell.backgroundColor = UIColor.blue
-        //        return cell
         
         return cell
     }
@@ -48,12 +44,20 @@ class MainController: UICollectionViewController, UICollectionViewDelegateFlowLa
     }
     
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        return collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "headerId", for: indexPath as IndexPath)
+        let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "headerId", for: indexPath as IndexPath) as! ActivityHeader
+        header.controller = self
+        return header
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         let height: CGFloat = 100; //dry
         return CGSize(width: view.frame.width, height: height)
+    }
+    
+    func addNewActivity(activityName: String, activityTime: String){
+        let activity = Activity(name: activityName,time: activityTime)
+        activities.append(activity)
+        collectionView.reloadData()
     }
     
 }
@@ -74,6 +78,8 @@ class BaseCell : UICollectionViewCell{
 
 class ActivityHeader: BaseCell{
     
+    var controller: MainController?
+    
     let activityNameTextField: UITextField={
         let textField = UITextField()
         textField.placeholder = "Enter Activity Name"
@@ -93,11 +99,16 @@ class ActivityHeader: BaseCell{
         addSubview(activityNameTextField)
         addSubview(addActivityButton)
         
+        addActivityButton.addTarget(self, action: Selector(("addActivity")), for: .touchUpInside) //selctor(())?
+        
         addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-8-[v0]-[v1(80)]-8-|", options: NSLayoutConstraint.FormatOptions(), metrics: nil, views: ["v0" : activityNameTextField, "v1": addActivityButton]))
-        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-8-[v0]-8-|", options: NSLayoutConstraint.FormatOptions(), metrics: nil, views: ["v0" : activityNameTextField]))
+        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-24-[v0]-24-|", options: NSLayoutConstraint.FormatOptions(), metrics: nil, views: ["v0" : activityNameTextField]))
         addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-8-[v0]-8-|", options: NSLayoutConstraint.FormatOptions(), metrics: nil, views: ["v0" : addActivityButton]))
     }
     
+    func addActivity(){
+        controller?.addNewActivity(activityName: activityNameTextField.text!, activityTime: "nil") //temp nil
+    }
 }
 
 class ActivityCell: BaseCell{
