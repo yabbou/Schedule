@@ -9,4 +9,3 @@ class Activity{
         self.time=time
     }
 }
-

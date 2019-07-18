@@ -3,17 +3,17 @@ import CoreData
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
     var window: UIWindow?
 
-    private func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions:
-        [NSObject: AnyObject]?) -> Bool { //UIApplication.LaunchOptionsKey: Any
+    private func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions:
+        [NSObject: AnyObject]?) -> Bool { 
         
-        //let layout = UITableViewFlowLayout()
-        window=UIWindow(frame: UIScreen.main.bounds)
+        window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
-        window?.rootViewController =
-            UINavigationController(rootViewController: MainController()) //..er(tableViewLayout:layout)
+
+        let collectionVC = MainController(collectionViewLayout: UICollectionViewFlowLayout())
+        window?.rootViewController = UINavigationController(rootViewController: collectionVC)
+        
         return true
     }
 
