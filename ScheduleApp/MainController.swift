@@ -30,7 +30,6 @@ class MainController: UICollectionViewController, UICollectionViewDelegateFlowLa
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath as IndexPath) as! ActivityCell
         cell.nameLabel.text = activities[indexPath.item].name
-        cell.backgroundColor = UIColor.blue
 
         //        let activity = activities[indexPath.row]
         //        cell.textLabel?.text =  activity.time + " " + activity.name
@@ -57,6 +56,7 @@ class MainController: UICollectionViewController, UICollectionViewDelegateFlowLa
     func addNewActivity(activityName: String, activityTime: String){
         let activity = Activity(name: activityName,time: activityTime)
         activities.append(activity)
+        
         collectionView.reloadData()
     }
     

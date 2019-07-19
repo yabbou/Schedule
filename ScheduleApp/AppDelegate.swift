@@ -5,14 +5,14 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
-    private func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions:
-        [NSObject: AnyObject]?) -> Bool { 
+    internal func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions:
+        [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        let mainVC = MainController(collectionViewLayout: UICollectionViewFlowLayout())
         
         window = UIWindow(frame: UIScreen.main.bounds)
+        window?.rootViewController = UINavigationController(rootViewController: mainVC)
         window?.makeKeyAndVisible()
-
-        let collectionVC = MainController(collectionViewLayout: UICollectionViewFlowLayout())
-        window?.rootViewController = UINavigationController(rootViewController: collectionVC)
         
         return true
     }
