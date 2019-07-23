@@ -41,28 +41,28 @@ class MainController: UICollectionViewController, UICollectionViewDelegateFlowLa
     
     //row height
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.width, height: 50)
+        let h: CGFloat = 50
+        return CGSize(width: view.frame.width, height: h)
     }
     
-    //header?
+    //header content
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "headerId", for: indexPath as IndexPath) as! ActivityHeader
         header.controller = self
         return header
     }
     
-    //header height?
+    //header height
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        let height: CGFloat = 100 //dry
-        return CGSize(width: view.frame.width, height: height)
+        let h: CGFloat = 100
+        return CGSize(width: view.frame.width, height: h)
     }
     
     func addNewActivity(activityName: String, activityTime: String){
         let activity = Activity(name: activityName,time: activityTime)
         activities.append(activity)
-        collectionView.reloadData()
+        collectionView?.reloadData()
     }
-    
 }
 
 //cell classes
@@ -84,7 +84,7 @@ class BaseCell : UICollectionViewCell{
 class ActivityHeader: BaseCell{
     var controller: MainController?
     
-    let activityNameTextField: UITextField={
+    let activityNameTextField: UITextField = {
         let textField = UITextField()
         textField.placeholder = "Enter Activity Name"
         textField.translatesAutoresizingMaskIntoConstraints = false
@@ -103,15 +103,16 @@ class ActivityHeader: BaseCell{
         addSubview(activityNameTextField)
         addSubview(addActivityButton)
         
-        addActivityButton.addTarget(self, action: Selector(("addActivity")), for: .touchUpInside) //selctor(())?
+        addActivityButton.addTarget(self, action: #selector(addActivity), for: .touchUpInside)
         
         addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-8-[v0]-[v1(80)]-8-|", options: NSLayoutConstraint.FormatOptions(), metrics: nil, views: ["v0" : activityNameTextField, "v1": addActivityButton]))
         addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-24-[v0]-24-|", options: NSLayoutConstraint.FormatOptions(), metrics: nil, views: ["v0" : activityNameTextField]))
         addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-8-[v0]-8-|", options: NSLayoutConstraint.FormatOptions(), metrics: nil, views: ["v0" : addActivityButton]))
     }
     
-    func addActivity(){
-        controller?.addNewActivity(activityName: activityNameTextField.text!, activityTime: "nil") //temp nil
+    @objc func addActivity(){
+        controller?.addNewActivity(activityName: activityNameTextField.text!, activityTime: "0") //temp time var
+        activityNameTextField.text = ""
     }
 }
 

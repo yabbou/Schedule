@@ -13,7 +13,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let mainViewController = MainController(collectionViewLayout: UICollectionViewFlowLayout())
         window?.rootViewController = UINavigationController(rootViewController: mainViewController)
-        
         return true
     }
 
