@@ -1,13 +1,14 @@
 import UIKit
 
 class MainController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+    
     var activities : [Activity] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         activities = initSchedule()
         
-        navigationItem.title="Schedule"
+        navigationItem.title = "Schedule"
         collectionView?.backgroundColor = UIColor.white
         collectionView?.alwaysBounceVertical = true
         
@@ -15,52 +16,56 @@ class MainController: UICollectionViewController, UICollectionViewDelegateFlowLa
         collectionView?.register(ActivityHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "headerId")
     }
     
-    func initSchedule() -> [Activity]{
+    private func initSchedule() -> [Activity]{
         let excersize=Activity(name: "excersize",time: "20")
         let code=Activity(name: "code",time: "2h")
         let guitar=Activity(name: "guitar",time: "15")
         return [excersize,code,guitar]
     }
     
+    //num of rows
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return activities.count
     }
     
+    //row content
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath as IndexPath) as! ActivityCell
-        cell.nameLabel.text = activities[indexPath.item].name
-
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath) as! ActivityCell
         //        let activity = activities[indexPath.row]
         //        cell.textLabel?.text =  activity.time + " " + activity.name
-        
+        cell.nameLabel.text = activities[indexPath.item].name
+
         return cell
     }
     
-    private func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,sizeForItemAtIndexPath indexPath:NSIndexPath)->CGSize{
-        let height: CGFloat = 50;
-        return CGSize(width: view.frame.width, height: height)
+    //row height
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: view.frame.width, height: 50)
     }
     
+    //header?
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "headerId", for: indexPath as IndexPath) as! ActivityHeader
         header.controller = self
         return header
     }
     
+    //header height?
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        let height: CGFloat = 100; //dry
+        let height: CGFloat = 100 //dry
         return CGSize(width: view.frame.width, height: height)
     }
     
     func addNewActivity(activityName: String, activityTime: String){
         let activity = Activity(name: activityName,time: activityTime)
         activities.append(activity)
-        
         collectionView.reloadData()
     }
     
 }
+
+//cell classes
 
 class BaseCell : UICollectionViewCell{
     override init(frame : CGRect) {
@@ -77,7 +82,6 @@ class BaseCell : UICollectionViewCell{
 }
 
 class ActivityHeader: BaseCell{
-    
     var controller: MainController?
     
     let activityNameTextField: UITextField={
@@ -123,6 +127,7 @@ class ActivityCell: BaseCell{
     
     override func setUpViews(){
         addSubview(nameLabel)
+        
         addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-8-[v0]-8-|", options: NSLayoutConstraint.FormatOptions(), metrics: nil, views: ["v0" : nameLabel]))
         addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-8-[v0]-8-|", options: NSLayoutConstraint.FormatOptions(), metrics: nil, views: ["v0" : nameLabel]))
     }
