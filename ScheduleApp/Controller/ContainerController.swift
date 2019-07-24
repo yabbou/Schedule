@@ -15,8 +15,12 @@ class ContainerController: UIViewController {
         configureHomeContorller()
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent 
+    }
+    
     func configureHomeContorller(){
-        let homeController = HomeController()
+        let homeController = HomeController(collectionViewLayout: UICollectionViewFlowLayout())
         let controller = UINavigationController(rootViewController: homeController)
         
         view.addSubview(controller.view)
@@ -24,16 +28,8 @@ class ContainerController: UIViewController {
         controller.didMove(toParent: self)
     }
     func configureMenuContorller(){
-//        let homeController = HomeController()
-//        let controller = UINavigationController(rootViewController: homeController)
-//
-//        view.addSubview(controller.view)
-//        addChild(controller)
-//        controller.didMove(toParent: self)
+
     }
-
-
-
 
 }
 

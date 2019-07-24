@@ -12,7 +12,6 @@
 		D7366BD822DE553600F268C9 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7366BD722DE553600F268C9 /* Activity.swift */; };
 		D7366BDB22DE708B00F268C9 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7366BDA22DE708B00F268C9 /* Settings.swift */; };
 		D795C5A522DD27C700B65BED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D795C5A422DD27C700B65BED /* AppDelegate.swift */; };
-		D795C5AD22DD27C800B65BED /* ScheduleApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D795C5AB22DD27C700B65BED /* ScheduleApp.xcdatamodeld */; };
 		D795C5AF22DD27CB00B65BED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D795C5AE22DD27CB00B65BED /* Assets.xcassets */; };
 		D795C5BD22DD27CB00B65BED /* ScheduleAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D795C5BC22DD27CB00B65BED /* ScheduleAppTests.swift */; };
 		D795C5C822DD27CB00B65BED /* ScheduleAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D795C5C722DD27CB00B65BED /* ScheduleAppUITests.swift */; };
@@ -45,7 +44,6 @@
 		D7366BDA22DE708B00F268C9 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		D795C5A122DD27C700B65BED /* ScheduleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScheduleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D795C5A422DD27C700B65BED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D795C5AC22DD27C700B65BED /* ScheduleApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ScheduleApp.xcdatamodel; sourceTree = "<group>"; };
 		D795C5AE22DD27CB00B65BED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D795C5B322DD27CB00B65BED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D795C5B822DD27CB00B65BED /* ScheduleAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScheduleAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -87,8 +85,8 @@
 		D71D401C22E8EA41003D07B5 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				D795C5D522DD2C7700B65BED /* HomeController.swift */,
 				D71D402122E8FA29003D07B5 /* ContainerController.swift */,
+				D795C5D522DD2C7700B65BED /* HomeController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -141,7 +139,6 @@
 				D7970C5522DFEAB100E4033F /* LaunchScreen.storyboard */,
 				D795C5AE22DD27CB00B65BED /* Assets.xcassets */,
 				D795C5B322DD27CB00B65BED /* Info.plist */,
-				D795C5AB22DD27C700B65BED /* ScheduleApp.xcdatamodeld */,
 			);
 			path = ScheduleApp;
 			sourceTree = "<group>";
@@ -296,7 +293,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D795C5D622DD2C7700B65BED /* HomeController.swift in Sources */,
-				D795C5AD22DD27C800B65BED /* ScheduleApp.xcdatamodeld in Sources */,
 				D7366BD822DE553600F268C9 /* Activity.swift in Sources */,
 				D795C5A522DD27C700B65BED /* AppDelegate.swift in Sources */,
 				D71D402222E8FA29003D07B5 /* ContainerController.swift in Sources */,
@@ -636,19 +632,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		D795C5AB22DD27C700B65BED /* ScheduleApp.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				D795C5AC22DD27C700B65BED /* ScheduleApp.xcdatamodel */,
-			);
-			currentVersion = D795C5AC22DD27C700B65BED /* ScheduleApp.xcdatamodel */;
-			path = ScheduleApp.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = D795C59922DD27C700B65BED /* Project object */;
 }
