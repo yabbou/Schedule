@@ -1,6 +1,6 @@
 import UIKit
 
-class MainController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
     var activities : [Activity] = []
     
@@ -58,79 +58,13 @@ class MainController: UICollectionViewController, UICollectionViewDelegateFlowLa
         return CGSize(width: view.frame.width, height: h)
     }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+    
     func addNewActivity(activityName: String, activityTime: String){
         let activity = Activity(name: activityName,time: activityTime)
         activities.append(activity)
         collectionView?.reloadData()
     }
-}
-
-//cell classes
-
-class BaseCell : UICollectionViewCell{
-    override init(frame : CGRect) {
-        super.init(frame: frame)
-        setUpViews()
-    }
-    
-    required init?(coder aDecoder: NSCoder){
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    func setUpViews(){
-    }
-}
-
-class ActivityHeader: BaseCell{
-    var controller: MainController?
-    
-    let activityNameTextField: UITextField = {
-        let textField = UITextField()
-        textField.placeholder = "Enter Activity Name"
-        textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.borderStyle = .roundedRect
-        return textField
-    }()
-    
-    let addActivityButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.setTitle("Add Activity", for: .normal)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        return button
-    }()
-    
-    override func setUpViews(){
-        addSubview(activityNameTextField)
-        addSubview(addActivityButton)
-        
-        addActivityButton.addTarget(self, action: #selector(addActivity), for: .touchUpInside)
-        
-        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-8-[v0]-[v1(80)]-8-|", options: NSLayoutConstraint.FormatOptions(), metrics: nil, views: ["v0" : activityNameTextField, "v1": addActivityButton]))
-        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-24-[v0]-24-|", options: NSLayoutConstraint.FormatOptions(), metrics: nil, views: ["v0" : activityNameTextField]))
-        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-8-[v0]-8-|", options: NSLayoutConstraint.FormatOptions(), metrics: nil, views: ["v0" : addActivityButton]))
-    }
-    
-    @objc func addActivity(){
-        controller?.addNewActivity(activityName: activityNameTextField.text!, activityTime: "0") //temp time var
-        activityNameTextField.text = ""
-    }
-}
-
-class ActivityCell: BaseCell{
-    
-    let nameLabel: UILabel = {
-        let label = UILabel()
-        label.text = "test"
-        label.font = UIFont.boldSystemFont(ofSize: 14)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
-    override func setUpViews(){
-        addSubview(nameLabel)
-        
-        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-8-[v0]-8-|", options: NSLayoutConstraint.FormatOptions(), metrics: nil, views: ["v0" : nameLabel]))
-        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-8-[v0]-8-|", options: NSLayoutConstraint.FormatOptions(), metrics: nil, views: ["v0" : nameLabel]))
-    }
-    
 }

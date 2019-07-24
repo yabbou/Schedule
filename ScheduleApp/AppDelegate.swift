@@ -8,11 +8,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     internal func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions:
         [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        window = UIWindow(frame: UIScreen.main.bounds)
+//        window = UIWindow(frame: UIScreen.main.bounds)
+//        window?.makeKeyAndVisible()
+//
+//        let homeController = HomeController(collectionViewLayout: UICollectionViewFlowLayout())
+//        window?.rootViewController = UINavigationController(rootViewController: mainViewController)
+//
+        window = UIWindow() //UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
+        window?.rootViewController = ContainerController()
         
-        let mainViewController = MainController(collectionViewLayout: UICollectionViewFlowLayout())
-        window?.rootViewController = UINavigationController(rootViewController: mainViewController)
         return true
     }
 

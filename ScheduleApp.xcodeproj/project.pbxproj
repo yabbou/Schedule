@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D71D401F22E8EA98003D07B5 /* ActivityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71D401E22E8EA98003D07B5 /* ActivityCell.swift */; };
+		D71D402222E8FA29003D07B5 /* ContainerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71D402122E8FA29003D07B5 /* ContainerController.swift */; };
 		D7366BD822DE553600F268C9 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7366BD722DE553600F268C9 /* Activity.swift */; };
 		D7366BDB22DE708B00F268C9 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7366BDA22DE708B00F268C9 /* Settings.swift */; };
 		D795C5A522DD27C700B65BED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D795C5A422DD27C700B65BED /* AppDelegate.swift */; };
@@ -14,7 +16,7 @@
 		D795C5AF22DD27CB00B65BED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D795C5AE22DD27CB00B65BED /* Assets.xcassets */; };
 		D795C5BD22DD27CB00B65BED /* ScheduleAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D795C5BC22DD27CB00B65BED /* ScheduleAppTests.swift */; };
 		D795C5C822DD27CB00B65BED /* ScheduleAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D795C5C722DD27CB00B65BED /* ScheduleAppUITests.swift */; };
-		D795C5D622DD2C7700B65BED /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D795C5D522DD2C7700B65BED /* MainController.swift */; };
+		D795C5D622DD2C7700B65BED /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D795C5D522DD2C7700B65BED /* HomeController.swift */; };
 		D7970C5722DFEAB200E4033F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7970C5522DFEAB100E4033F /* LaunchScreen.storyboard */; };
 		D7A21DF322E25518002CED30 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7A21DF122E25518002CED30 /* Main.storyboard */; };
 /* End PBXBuildFile section */
@@ -37,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D71D401E22E8EA98003D07B5 /* ActivityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCell.swift; sourceTree = "<group>"; };
+		D71D402122E8FA29003D07B5 /* ContainerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerController.swift; sourceTree = "<group>"; };
 		D7366BD722DE553600F268C9 /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
 		D7366BDA22DE708B00F268C9 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		D795C5A122DD27C700B65BED /* ScheduleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScheduleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -50,7 +54,7 @@
 		D795C5C322DD27CB00B65BED /* ScheduleAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScheduleAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D795C5C722DD27CB00B65BED /* ScheduleAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleAppUITests.swift; sourceTree = "<group>"; };
 		D795C5C922DD27CB00B65BED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D795C5D522DD2C7700B65BED /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
+		D795C5D522DD2C7700B65BED /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		D7970C5622DFEAB100E4033F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D7A21DF222E25518002CED30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -80,6 +84,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D71D401C22E8EA41003D07B5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D795C5D522DD2C7700B65BED /* HomeController.swift */,
+				D71D402122E8FA29003D07B5 /* ContainerController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D71D401D22E8EA51003D07B5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D71D401E22E8EA98003D07B5 /* ActivityCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D71D402022E8EAE0003D07B5 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		D795C59822DD27C700B65BED = {
 			isa = PBXGroup;
 			children = (
@@ -103,10 +131,12 @@
 		D795C5A322DD27C700B65BED /* ScheduleApp */ = {
 			isa = PBXGroup;
 			children = (
+				D71D401D22E8EA51003D07B5 /* View */,
+				D71D401C22E8EA41003D07B5 /* Controller */,
 				D795C5A422DD27C700B65BED /* AppDelegate.swift */,
-				D795C5D522DD2C7700B65BED /* MainController.swift */,
 				D7366BD722DE553600F268C9 /* Activity.swift */,
 				D7366BDA22DE708B00F268C9 /* Settings.swift */,
+				D71D402022E8EAE0003D07B5 /* Helpers */,
 				D7A21DF122E25518002CED30 /* Main.storyboard */,
 				D7970C5522DFEAB100E4033F /* LaunchScreen.storyboard */,
 				D795C5AE22DD27CB00B65BED /* Assets.xcassets */,
@@ -265,10 +295,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D795C5D622DD2C7700B65BED /* MainController.swift in Sources */,
+				D795C5D622DD2C7700B65BED /* HomeController.swift in Sources */,
 				D795C5AD22DD27C800B65BED /* ScheduleApp.xcdatamodeld in Sources */,
 				D7366BD822DE553600F268C9 /* Activity.swift in Sources */,
 				D795C5A522DD27C700B65BED /* AppDelegate.swift in Sources */,
+				D71D402222E8FA29003D07B5 /* ContainerController.swift in Sources */,
+				D71D401F22E8EA98003D07B5 /* ActivityCell.swift in Sources */,
 				D7366BDB22DE708B00F268C9 /* Settings.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
