@@ -3,18 +3,13 @@ import UIKit
 class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
     var activities : [Activity] = []
+    var delagte: HomeControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         activities = initSchedule()
         configureNavigationBar()
-        
-        navigationItem.title = "Schedule"
-        collectionView?.backgroundColor = .white
-        collectionView?.alwaysBounceVertical = true
-        
-        collectionView?.register(ActivityCell.self, forCellWithReuseIdentifier: "cellId")
-        collectionView?.register(ActivityHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "headerId")
+        configureActivityCells()
     }
     
     //MARK: - Navbar
@@ -24,11 +19,10 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
         navigationController?.navigationBar.barStyle = .black
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "menu_icon").withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(handleMenuToggle))
-
     }
     
     @objc func handleMenuToggle(){
-        print("toggling menu...") //tmep
+        delagte?.handleMenuToggle()
     }
     
     //MARK: - Cells
@@ -38,6 +32,15 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
         let code=Activity(name: "code",time: "2h")
         let guitar=Activity(name: "guitar",time: "15")
         return [excersize,code,guitar]
+    }
+    
+    func configureActivityCells(){
+        navigationItem.title = "Schedule"
+        collectionView?.backgroundColor = .white
+        collectionView?.alwaysBounceVertical = true
+        
+        collectionView?.register(ActivityCell.self, forCellWithReuseIdentifier: "cellId")
+        collectionView?.register(ActivityHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "headerId")
     }
     
     func addNewActivity(activityName: String, activityTime: String){

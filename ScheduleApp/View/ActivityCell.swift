@@ -70,8 +70,6 @@ class ActivityCell: BaseCell{
     override func setUpViews(){
         addSubview(nameLabel)
         
-        //        backgroundColor = UIColor.cyan
-        
         addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-16-[v0]-16-|", options: NSLayoutConstraint.FormatOptions(), metrics: nil, views: ["v0" : nameLabel]))
         addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-16-[v0]-16-|", options: NSLayoutConstraint.FormatOptions(), metrics: nil, views: ["v0" : nameLabel]))
     }
